@@ -1,13 +1,72 @@
 const api_key = `8206b490bb080c4a5d3dfd083e2b914d`;
-const apiUrl = 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1&api_key=' + api_key;
+const apiUrl = 'https://api.themoviedb.org/3/movie/top_rated?language=ko-KR&page=1&api_key=' + api_key;
+
+const fetchMovies = () => {
+  return fetch(apiUrl, {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      const movieContainer = document.getElementById('movie-card-container');
+
+      data.results.forEach((movie) => {
+        const card = document.createElement('div');
+        card.classList.add('movie-card');
+        card.innerHTML = `
+          <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />
+          <h2>${movie.title}</h2>
+          <p>${movie.overview}</p>
+          <p>Rating: ${movie.vote_average}</p>`;
+        
+        card.setAttribute('data-movie-id', movie.id);
+        
+        card.addEventListener('click', () => {
+          const movieId = card.getAttribute('data-movie-id');
+          alert(`Clicked on movie with ID: ${movieId}`);
+        });
+
+        movieContainer.appendChild(card);
+      });
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
+fetchMovies();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+const api_key = `8206b490bb080c4a5d3dfd083e2b914d`;
+const apiUrl = 'https://api.themoviedb.org/3/movie/top_rated?language=ko-KR&page=1&api_key=' + api_key;
 
 const fetchMovies = async () => {
   try {
     const response = await fetch(apiUrl, {
       method: 'GET',
       headers: {
-        accept: 'application/json',
-        Authorization: `Bearer ${api_key}`, 
+        accept: 'application/json'
       }
     });
     
@@ -43,27 +102,7 @@ const fetchMovies = async () => {
 };
 
 fetchMovies();
-
-//test
-
-
-/*const options = {
-    method: 'GET',
-    headers: {
-        accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MjA2YjQ5MGJiMDgwYzRhNWQzZGZkMDgzZTJiOTE0ZCIsInN1YiI6IjY1MzBlMDM3YzQzOWMwMDBmZThjMDEyMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.S3jqHMoGzbJnyIAeZoIRTLgdCWscCagPJIzZs-Ehl1U'
-    }
-};
-
-fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
-
-const movieContainer = document.getElementById("movie-card-container");
 */
-
-
 
 
 /*

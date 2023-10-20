@@ -3,7 +3,7 @@ body {
 }
 
 .film-box {
-    background-color: rgb(159, 161, 137);
+    background-color: rgb(233, 158, 158);
     width: 800px;
     height: 700px;
     border: inset 5px;
@@ -15,7 +15,7 @@ body {
 }
 
 .design-purposes {
-    background-color:  rgb(207, 203, 181, 0.5); /* 반투명 배경 */
+    background-color:  rgb(175, 83, 83);  /* 반투명 배경 */
     width: 100%;
     height: 80px;
     position: absolute;
@@ -33,7 +33,7 @@ body {
 
 
 .movieBox {
-    background-color: rgb(207, 203, 181); 
+    background-color: beige;
     width: 430px;
     height: 450px;
     border: double 3px;
@@ -45,7 +45,7 @@ body {
 }
 
 .horoscopeBox {
-    background-color: rgb(207, 203, 181); 
+    background-color: beige;
     width: 430px;
     height: 30px;
     border: double 3px;
