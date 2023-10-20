@@ -1,0 +1,99 @@
+body {
+  background-color: rgb(255, 246, 208);
+}
+
+.film-box {
+    background-color: rgb(159, 161, 137);
+    width: 800px;
+    height: 700px;
+    border: inset 5px;
+    border-color: rgb(192, 184, 142); 
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+.design-purposes {
+    background-color:  rgb(207, 203, 181, 0.5); /* 반투명 배경 */
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    box-sizing: border-box; /* 내부의 border를 포함하여 크기를 조절하도록 설정 */
+    border: 3px solid transparent; /* 투명한 테두리 설정 */
+    border-radius: 5px;
+    top: 0;
+    left: 0;
+}
+
+#search-box {
+    padding-top: 90px;
+    padding-left: 550px;
+}
+
+
+.movieBox {
+    background-color: rgb(207, 203, 181); 
+    width: 430px;
+    height: 450px;
+    border: double 3px;
+    border-radius: 5px;
+    border-color: rgb(255, 255, 255);
+    margin-top: 25px;
+    margin-left: 350px;
+    position: absolute;
+}
+
+.horoscopeBox {
+    background-color: rgb(207, 203, 181); 
+    width: 430px;
+    height: 30px;
+    border: double 3px;
+    border-radius: 5px;
+    border-color: rgb(255, 255, 255);
+    margin-top: 500px;
+    margin-left: 350px;
+    position: absolute;
+}
+
+
+.half-circle {
+    width: 270px;
+    height: 500px;
+    background-color: #ffffff;
+    border-top-left-radius: 150px 100px;
+    /* 오른쪽 상단 모서리를 반원으로 만듭니다 */
+    border-bottom-left-radius: 150px 100px;
+    /* 오른쪽 하단 모서리를 반원으로 만듭니다 */
+    
+    margin-top: 30px;
+    margin-left: 25px;
+}
+
+#movie-card-container {
+  
+ 
+  display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+    gap: 20px; /* Adjust the gap as needed */
+  }
+  
+  .movie-card {
+    background-color: #f8baba;
+    
+   
+  border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .movie-card img {
+    
+   
+  max-width: 100%;
+    height: auto;
+  }
+
+
+/*test*/
